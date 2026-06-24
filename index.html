@@ -4,21 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>El Mundo del Habano</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Lato:wght@300;400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- ==================== NAVBAR ==================== -->
+  <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
       <button class="nav-logo" onclick="navigate('home')">
-        <svg class="logo-icon" viewBox="0 0 28 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M2 11 Q7 4 14 6 Q21 8 26 11" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
-          <path d="M2 11 Q7 14 14 13 Q21 12 26 11" stroke="#C9A84C" stroke-width="1" fill="none" opacity="0.6"/>
-          <path d="M4 15 Q9 10 14 11 Q19 12 24 15" stroke="#C9A84C" stroke-width="0.8" fill="none" opacity="0.4"/>
+        <svg class="logo-icon" viewBox="0 0 40 32" fill="none">
+          <polygon points="20,2 38,11 20,20 2,11" stroke="#C9A84C" stroke-width="1.6" fill="none"/>
+          <polygon points="20,13 38,22 20,31 2,22" stroke="#C9A84C" stroke-width="1.2" fill="none" opacity="0.55"/>
         </svg>
         <span class="logo-text">El Mundo del Habano</span>
       </button>
@@ -26,219 +23,217 @@
       <div class="nav-search">
         <input type="text" placeholder="Buscar" id="searchInput" />
         <button class="search-btn" aria-label="Buscar">
-          <svg viewBox="0 0 18 18" fill="none"><circle cx="7.5" cy="7.5" r="5" stroke="currentColor" stroke-width="1.5"/><line x1="11.5" y1="11.5" x2="16" y2="16" stroke="currentColor" stroke-width="1.5"/></svg>
+          <svg viewBox="0 0 18 18" fill="none"><circle cx="7.5" cy="7.5" r="5" stroke="currentColor" stroke-width="1.4"/><line x1="11.5" y1="11.5" x2="16" y2="16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
         </button>
       </div>
 
       <ul class="nav-links" id="navLinks">
         <li><button class="nav-link" data-view="vitolario" onclick="navigate('vitolario')">Vitolario</button></li>
-        <li><button class="nav-link locked" data-view="indice" id="navIndice" onclick="navigate('indice')">Índice</button></li>
+        <li>
+          <button class="nav-link nav-locked" data-view="indice" id="navIndice" onclick="navigate('indice')">
+            Índice
+            <svg class="lock-icon" viewBox="0 0 10 13" fill="none"><rect x="1.5" y="5.5" width="7" height="6.5" rx="1" stroke="currentColor" stroke-width="1.1"/><path d="M3.5 5.5V4a1.5 1.5 0 013 0v1.5" stroke="currentColor" stroke-width="1.1"/></svg>
+          </button>
+        </li>
         <li><button class="nav-link" data-view="novedades" onclick="navigate('novedades')">Novedades</button></li>
-        <li><button class="nav-link locked" data-view="coleccionista" id="navColeccionista" onclick="navigate('coleccionista')">Coleccionista</button></li>
+        <li>
+          <button class="nav-link nav-locked" data-view="coleccionista" id="navColeccionista" onclick="navigate('coleccionista')">
+            Coleccionista
+            <svg class="lock-icon" viewBox="0 0 10 13" fill="none"><rect x="1.5" y="5.5" width="7" height="6.5" rx="1" stroke="currentColor" stroke-width="1.1"/><path d="M3.5 5.5V4a1.5 1.5 0 013 0v1.5" stroke="currentColor" stroke-width="1.1"/></svg>
+          </button>
+        </li>
       </ul>
 
       <div class="nav-right">
         <button class="nav-user" id="navUserBtn" onclick="navigate('perfil')">
-          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.5"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="currentColor" stroke-width="1.5"/></svg>
+          <svg viewBox="0 0 34 34" fill="none">
+            <circle cx="17" cy="17" r="16" fill="rgba(201,168,76,0.12)" stroke="rgba(201,168,76,0.45)" stroke-width="1"/>
+            <circle cx="17" cy="13" r="5" fill="#C9A84C" opacity="0.7"/>
+            <path d="M6 30c0-6 5-10 11-10s11 4 11 10" fill="#C9A84C" opacity="0.4"/>
+          </svg>
         </button>
         <div class="lang-toggle">
           <button class="lang-btn active" id="langEs" onclick="setLang('es')">ES</button>
-          <span>|</span>
+          <span class="lang-sep">|</span>
           <button class="lang-btn" id="langEn" onclick="setLang('en')">EN</button>
         </div>
-        <button class="nav-toggle" id="navToggle">
+        <button class="nav-hamburger" id="navToggle" aria-label="Menú">
           <span></span><span></span><span></span>
         </button>
       </div>
     </div>
   </nav>
 
-  <!-- ==================== VIEWS ==================== -->
-
-  <!-- VIEW: AGE GATE -->
+  <!-- ===== VIEW: AGE GATE ===== -->
   <div class="view active" id="view-agegate">
-    <div class="hero-panel">
-      <div class="hero-texture"></div>
-      <div class="hero-content center">
-        <div class="habanos-wave">
-          <svg viewBox="0 0 80 30" fill="none"><path d="M5 15 Q20 5 40 10 Q60 15 75 10" stroke="#C9A84C" stroke-width="2" fill="none"/><path d="M5 20 Q20 12 40 16 Q60 20 75 16" stroke="#C9A84C" stroke-width="1.2" fill="none" opacity="0.7"/></svg>
-        </div>
-        <h1 class="hero-title-main">EL MUNDO<br>DEL HABANO</h1>
-        <p class="hero-subtitle-main">El Paraíso del Tabaco</p>
-        <div class="gold-sep"></div>
-        <p class="age-text">Este sitio contiene información relacionada con el tabaco.<br>Confirme que tiene la edad legal en su país para visitar<br>el sitio o que es mayor de 21 años.</p>
-        <div class="age-actions">
-          <button class="btn-primary" id="ageConfirm" onclick="confirmAge()">Confirmar edad</button>
-        </div>
-        <div class="habanos-logo-footer">
-          <svg viewBox="0 0 100 20" fill="none"><text x="0" y="14" font-family="Lato" font-size="9" fill="#C9A84C" letter-spacing="3" font-weight="700">HABANOS</text><text x="0" y="20" font-family="Lato" font-size="6" fill="#C9A84C" letter-spacing="2">S.A.</text></svg>
+    <div class="fullscreen-dark">
+      <div class="fs-center">
+        <h1 class="fs-title">EL MUNDO<br>DEL HABANO</h1>
+        <p class="fs-subtitle">El Paraíso del Tabaco</p>
+        <div class="gold-line"></div>
+        <p class="age-desc">Este sitio muestra contenido relacionado con el tabaco.<br>Confirme que tiene la edad legal en su país para visitar<br>el sitio o que es mayor de 21 años.</p>
+        <div class="age-btns">
+          <button class="btn-age" onclick="confirmAge()">Si</button>
+          <button class="btn-age secondary">No</button>
         </div>
       </div>
-    </div>
-    <div class="side-panel" id="ageSidePanel">
-      <div class="side-card">
-        <p class="side-card-label">Encuentra tu punto de venta más cercano</p>
-        <div class="side-card-icon"><svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="18" r="8" stroke="#C9A84C" stroke-width="1.5"/><path d="M20 26 L20 36" stroke="#C9A84C" stroke-width="1.5"/><circle cx="20" cy="18" r="3" fill="#C9A84C" opacity="0.5"/></svg></div>
-        <div class="habanos-badge">
-          <svg viewBox="0 0 80 16" fill="none"><text x="0" y="12" font-family="Lato" font-size="7" fill="#C9A84C" letter-spacing="2" font-weight="700">HABANOS S.A.</text></svg>
-        </div>
-        <button class="btn-outline-gold" onclick="navigate('register')">Registrarse</button>
+      <div class="habanos-logo-foot">
+        <svg viewBox="0 0 110 26" width="110">
+          <text x="55" y="17" font-family="Lato,sans-serif" font-size="13" font-weight="700" fill="#C9A84C" text-anchor="middle" letter-spacing="4">HABANOS</text>
+          <text x="55" y="26" font-family="Lato,sans-serif" font-size="8" fill="#C9A84C" text-anchor="middle" letter-spacing="3">D.O.P.</text>
+        </svg>
       </div>
     </div>
   </div>
 
-  <!-- VIEW: HOME -->
+  <!-- ===== VIEW: HOME ===== -->
   <div class="view" id="view-home">
-    <div class="hero-panel">
-      <div class="hero-texture"></div>
-      <div class="hero-content">
-        <p class="hero-welcome">Bienvenido,</p>
-        <p class="hero-welcome-sub">al mundo del Habano</p>
-        <p class="hero-body-text">Perfeccione su deleite alrededor de la 1ª marca de Denominación de Origen Protegida. Habanos y produciéndose el arte de la toja. Únete a una comunidad de apasionados, entusiastas del mundo. Si quiere Hammo, emce sesión.</p>
-        <button class="btn-outline-cream" onclick="navigate('login')">Iniciar sesión</button>
-        <div class="habanos-logo-footer">
-          <svg viewBox="0 0 100 20" fill="none"><text x="0" y="14" font-family="Lato" font-size="9" fill="#C9A84C" letter-spacing="3" font-weight="700">HABANOS</text><text x="0" y="20" font-family="Lato" font-size="6" fill="#C9A84C" letter-spacing="2">S.A.</text></svg>
-        </div>
+    <div class="fullscreen-dark">
+      <div class="fs-center">
+        <h1 class="fs-title">EL MUNDO<br>DEL HABANO</h1>
+        <p class="fs-subtitle">El Paraíso del Tabaco</p>
       </div>
-    </div>
-    <div class="side-panel">
-      <div class="side-card">
-        <p class="side-card-label">Encuentra tu punto de venta más cercano</p>
-        <div class="side-card-icon"><svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="18" r="8" stroke="#C9A84C" stroke-width="1.5"/><path d="M20 26 L20 36" stroke="#C9A84C" stroke-width="1.5"/><circle cx="20" cy="18" r="3" fill="#C9A84C" opacity="0.5"/></svg></div>
-        <ul class="side-card-links">
-          <li>◆ La Habana</li>
-          <li>◆ Madrid</li>
-          <li>◆ París</li>
-        </ul>
-        <div class="habanos-badge-inline">
-          <img src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgODAgMTYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHRleHQgeD0iMCIgeT0iMTIiIGZvbnQtZmFtaWx5PSJMYXRvIiBmb250LXNpemU9IjciIGZpbGw9IiNDOUE4NEMiIGxldHRlci1zcGFjaW5nPSIyIiBmb250LXdlaWdodD0iNzAwIj5IQUJBTU9TIFMuQS48L3RleHQ+PC9zdmc+" alt="Habanos"/>
+      <div class="habanos-logo-foot">
+        <svg viewBox="0 0 110 26" width="110">
+          <text x="55" y="17" font-family="Lato,sans-serif" font-size="13" font-weight="700" fill="#C9A84C" text-anchor="middle" letter-spacing="4">HABANOS</text>
+          <text x="55" y="26" font-family="Lato,sans-serif" font-size="8" fill="#C9A84C" text-anchor="middle" letter-spacing="3">D.O.P.</text>
+        </svg>
+      </div>
+      <div class="home-float-card">
+        <div class="hfc-top">
+          <p class="hfc-label">Encuentra tú punto de<br>venta más cercano</p>
+          <div class="hfc-brand">
+            <svg viewBox="0 0 22 18" fill="none" width="16"><polygon points="11,1 21,7 11,13 1,7" stroke="#C9A84C" stroke-width="1.4" fill="none"/><polygon points="11,8 21,14 11,20 1,14" stroke="#C9A84C" stroke-width="1" fill="none" opacity="0.5"/></svg>
+            <span>El Mundo del Habano</span>
+          </div>
+        </div>
+        <div class="hfc-bottom">
+          <p class="hfc-disfruta">Disfruta</p>
+          <p class="hfc-academia">Academia<br><strong>Habanos</strong></p>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- VIEW: REGISTER -->
+  <!-- ===== VIEW: REGISTER ===== -->
   <div class="view" id="view-register">
-    <div class="hero-panel narrow">
-      <div class="hero-texture"></div>
-      <div class="hero-content">
-        <p class="hero-welcome">Bienvenido,</p>
-        <p class="hero-welcome-sub">al mundo del Habano</p>
-        <div class="habanos-logo-footer">
-          <svg viewBox="0 0 100 20" fill="none"><text x="0" y="14" font-family="Lato" font-size="9" fill="#C9A84C" letter-spacing="3" font-weight="700">HABANOS</text><text x="0" y="20" font-family="Lato" font-size="6" fill="#C9A84C" letter-spacing="2">S.A.</text></svg>
-        </div>
+    <div class="split-dark">
+      <div class="split-dark-inner">
+        <p class="bienvenido-line">Bienvenid@,</p>
+        <p class="mundo-line">AL MUNDO DEL HABANO</p>
+        <p class="split-body-text">Perfecciona tu paladar, descubre las 27 marcas de la Denominación de Origen Protegida Habanos y profundiza en el arte de la ligada. Únete a la comunidad de conocedores más prestigiosa del mundo. Si ya eres miembro, inicia sesión debajo.</p>
+        <button class="link-under" onclick="navigate('login')">Inicia sesión</button>
+      </div>
+      <div class="split-logo-foot">
+        <svg viewBox="0 0 100 22" width="90">
+          <text x="0" y="14" font-family="Lato,sans-serif" font-size="11" font-weight="700" fill="#C9A84C" letter-spacing="3">HABANOS</text>
+          <text x="0" y="22" font-family="Lato,sans-serif" font-size="7" fill="#C9A84C" letter-spacing="2">D.O.P.</text>
+        </svg>
       </div>
     </div>
-    <div class="form-panel">
-      <h2 class="form-title">Registro</h2>
-      <div class="form-step" id="regStep1">
-        <p class="form-label-q">¿Propietario del libro?</p>
-        <div class="radio-group">
-          <label class="radio-opt"><input type="radio" name="propietario" value="si" onchange="showRegStep2(true)"> Sí</label>
-          <label class="radio-opt"><input type="radio" name="propietario" value="no" onchange="showRegStep2(false)"> No</label>
+    <div class="split-white">
+      <div class="form-box">
+        <h2 class="form-heading">Registro</h2>
+        <div id="regStep1">
+          <p class="form-question">¿ Dispone del libro ?</p>
+          <div class="radio-row">
+            <label class="radio-opt"><input type="radio" name="libro" value="si" onchange="showRegStep2(true)"> Sí</label>
+            <label class="radio-opt radio-active"><input type="radio" name="libro" value="no" checked onchange="showRegStep2(false)"> No</label>
+          </div>
         </div>
-        <div id="codLibro" class="form-field hidden">
-          <input type="text" class="field-input" placeholder="Código del libro *" />
+        <div id="regStep2" class="hidden">
+          <div class="fld"><input class="fld-in" type="text" placeholder="Nombre / Apellido*" /></div>
+          <div class="fld"><input class="fld-in" type="email" placeholder="Correo Electrónico*" /></div>
+          <div class="fld-row">
+            <input class="fld-in" type="text" placeholder="País de Residencia*" />
+            <input class="fld-in" type="tel" placeholder="Teléfono" />
+          </div>
+          <div class="fld"><input class="fld-in" type="text" placeholder="Soy aficionado, profesional ... *" /></div>
+          <div class="fld"><input class="fld-in" type="text" placeholder="Número del libro*" /></div>
+          <div class="fld"><input class="fld-in" type="password" placeholder="Contraseña*" /></div>
+          <label class="check-opt">
+            <input type="checkbox" /> Acepto el envío de comunicados por correo.
+          </label>
+        </div>
+        <div class="form-foot">
+          <button class="btn-unirse" onclick="doRegister()">Unirse &gt;</button>
+          <div class="progress-dots">
+            <span class="pdot active"></span>
+            <span class="pdot"></span>
+            <span class="pdot"></span>
+          </div>
         </div>
       </div>
-      <div class="form-step hidden" id="regStep2">
-        <div class="form-row">
-          <div class="form-field"><input type="text" class="field-input" placeholder="Nombre *" /></div>
-          <div class="form-field"><input type="text" class="field-input" placeholder="Apellidos *" /></div>
-        </div>
-        <div class="form-field"><input type="email" class="field-input" placeholder="Correo electrónico *" /></div>
-        <div class="form-row">
-          <div class="form-field"><input type="text" class="field-input" placeholder="País de residencia *" /></div>
-          <div class="form-field"><input type="tel" class="field-input" placeholder="Teléfono" /></div>
-        </div>
-        <div class="form-field">
-          <select class="field-input">
-            <option value="">Perfil *</option>
-            <option>Aficionado</option>
-            <option>Profesional</option>
-            <option>Coleccionista</option>
-            <option>Distribuidor</option>
-          </select>
-        </div>
-        <div class="form-field"><input type="date" class="field-input" placeholder="Fecha de nacimiento *" /></div>
-        <div class="form-field"><input type="password" class="field-input" placeholder="Contraseña *" /></div>
-        <label class="checkbox-label">
-          <input type="checkbox" /> Acepta el envío de comunicaciones, notificaciones y actualizaciones.
-        </label>
-        <button class="btn-primary wide" onclick="doRegister()">Crear →</button>
-      </div>
-      <div class="form-dots">
-        <span class="dot active"></span><span class="dot"></span><span class="dot"></span>
-      </div>
-      <p class="form-alt">¿Ya tienes cuenta? <button class="link-btn" onclick="navigate('login')">Iniciar sesión</button></p>
     </div>
   </div>
 
-  <!-- VIEW: LOGIN -->
+  <!-- ===== VIEW: LOGIN ===== -->
   <div class="view" id="view-login">
-    <div class="hero-panel narrow">
-      <div class="hero-texture"></div>
-      <div class="hero-content">
-        <p class="hero-welcome">Bienvenido,</p>
-        <p class="hero-welcome-sub">al mundo del Habano</p>
-        <div class="habanos-logo-footer">
-          <svg viewBox="0 0 100 20" fill="none"><text x="0" y="14" font-family="Lato" font-size="9" fill="#C9A84C" letter-spacing="3" font-weight="700">HABANOS</text><text x="0" y="20" font-family="Lato" font-size="6" fill="#C9A84C" letter-spacing="2">S.A.</text></svg>
-        </div>
+    <div class="split-dark wider-dark">
+      <div class="split-dark-inner">
+        <p class="bienvenido-line">Bienvenid@,</p>
+        <p class="mundo-line">al mundo del Habano</p>
+      </div>
+      <div class="split-logo-foot">
+        <svg viewBox="0 0 100 22" width="90">
+          <text x="0" y="14" font-family="Lato,sans-serif" font-size="11" font-weight="700" fill="#C9A84C" letter-spacing="3">HABANOS</text>
+          <text x="0" y="22" font-family="Lato,sans-serif" font-size="7" fill="#C9A84C" letter-spacing="2">D.O.P.</text>
+        </svg>
       </div>
     </div>
-    <div class="form-panel center-form">
-      <div class="avatar-circle">
-        <svg viewBox="0 0 60 60" fill="none"><circle cx="30" cy="60" r="30" fill="#F0EDE8"/><circle cx="30" cy="24" r="10" fill="#C9A84C" opacity="0.5"/></svg>
+    <div class="split-white login-white">
+      <div class="login-avatar">
+        <svg viewBox="0 0 100 100" width="90">
+          <circle cx="50" cy="50" r="48" fill="none" stroke="#C9A84C" stroke-width="2"/>
+          <circle cx="50" cy="38" r="17" fill="#C9A84C" opacity="0.65"/>
+          <path d="M11 86c0-21 17-33 39-33s39 12 39 33" fill="#C9A84C" opacity="0.45"/>
+        </svg>
       </div>
-      <h2 class="form-title">Iniciar sesión</h2>
-      <div class="form-field"><input type="email" class="field-input" placeholder="Correo electrónico *" /></div>
-      <div class="form-field"><input type="password" class="field-input" placeholder="Contraseña *" /></div>
-      <button class="btn-primary wide" onclick="doLogin()">Entrar →</button>
-      <p class="form-alt"><button class="link-btn" onclick="">¿Olvidó su contraseña?</button></p>
-      <p class="form-alt">¿No tienes cuenta? <button class="link-btn" onclick="navigate('register')">Registrarse</button></p>
+      <div class="fld"><input class="fld-in" type="email" placeholder="Correo Electrónico*" /></div>
+      <div class="fld"><input class="fld-in" type="password" placeholder="Contraseña*" /></div>
+      <button class="btn-entrar" onclick="doLogin()">Entrar &gt;</button>
     </div>
   </div>
 
-  <!-- VIEW: VITOLARIO -->
-  <div class="view white-view" id="view-vitolario">
-    <div class="vitolario-layout">
-      <div class="vitolario-main" id="vitolarioMain">
-        <div class="vitolario-filters">
-          <div class="filter-dropdowns">
-            <button class="filter-pill">Todas las Marcas <span>▾</span></button>
-            <button class="filter-pill">Vitolas de Galera <span>▾</span></button>
-            <button class="filter-pill">Vitola de Galera <span>▾</span></button>
-            <button class="filter-pill">Tipo de tripa <span>▾</span></button>
-            <button class="filter-pill">Cepo <span>▾</span></button>
-            <button class="filter-pill">Longitud <span>▾</span></button>
-            <button class="filter-pill">Año <span>▾</span></button>
-            <button class="filter-pill">Fortalezas <span>▾</span></button>
+  <!-- ===== VIEW: VITOLARIO ===== -->
+  <div class="view dark-view" id="view-vitolario">
+    <div class="vit-layout">
+      <div class="vit-main">
+        <div class="vit-filters">
+          <div class="filter-pills-row">
+            <button class="fpill">Todas las Marcas <span class="arr">▶</span></button>
+            <button class="fpill">Vítolas de Galera <span class="arr">▶</span></button>
+            <button class="fpill">Vitola de Galera <span class="arr">▶</span></button>
+            <button class="fpill">Tipo de tripa <span class="arr">▶</span></button>
+            <button class="fpill">Cepo <span class="arr">▶</span></button>
+            <button class="fpill">Longitud <span class="arr">▶</span></button>
+            <button class="fpill">Año <span class="arr">▶</span></button>
+            <button class="fpill">Fortalezas <span class="arr">▶</span></button>
           </div>
-          <div class="filter-cats">
-            <button class="cat-btn active" onclick="setCat(this, 'regular')">Catálogo Regular</button>
-            <button class="cat-btn" onclick="setCat(this, 'granreserva')">Gran Reserva</button>
-            <button class="cat-btn" onclick="setCat(this, 'reserva')">Reserva</button>
-            <button class="cat-btn" onclick="setCat(this, 'limitadas')">Ediciones Limitadas</button>
-            <button class="cat-btn" onclick="setCat(this, 'anejados')">Añejados</button>
-            <button class="cat-btn" onclick="setCat(this, 'vintage')">Habanos Vintage</button>
-            <button class="cat-btn" onclick="setCat(this, 'especialistas')">Especialistas en Habanos</button>
+          <div class="cat-tabs-row">
+            <button class="ctab active" onclick="setCat(this,'regular')">Catálogo Regular</button>
+            <button class="ctab" onclick="setCat(this,'granreserva')">Gran Reserva</button>
+            <button class="ctab" onclick="setCat(this,'reserva')">Reserva</button>
+            <button class="ctab" onclick="setCat(this,'limitadas')">Ediciones Limitadas</button>
+            <button class="ctab" onclick="setCat(this,'casahabano')">Casa Del Habano</button>
+            <button class="ctab" onclick="setCat(this,'regionales')">Ediciones Regionales</button>
+            <button class="ctab" onclick="setCat(this,'anejados')">Añejados</button>
+            <button class="ctab" onclick="setCat(this,'vintage')">Habanos Vintage</button>
+            <button class="ctab" onclick="setCat(this,'especialistas')">Especialistas en Habanos</button>
           </div>
-          <p class="filter-desc">Habanos de producción regular, son los considerados productos standard y con una aparición regular en los mercados.</p>
+          <p class="cat-desc-txt">Habanos de producción regular, son los considerados productos standard y con una aparición regular en los mercados.</p>
         </div>
-        <div class="vitolas-visual" id="vitolasVisual">
-          <!-- cigar silhouettes rendered via JS -->
-        </div>
+        <div class="vitolas-visual" id="vitolasVisual"></div>
       </div>
-      <div class="vitola-detail-panel" id="vitolDetail">
-        <div class="vitola-detail-inner">
-          <div class="vitola-detail-cigar">
-            <!-- cigar image area -->
-            <div class="detail-cigar-render" id="detailCigarImg"></div>
+      <div class="vit-detail-panel" id="vitolDetail">
+        <div class="vd-inner">
+          <div class="vd-cigar-wrap">
+            <div class="vd-cigar-img" id="detailCigarImg"></div>
           </div>
-          <div class="vitola-detail-info">
-            <p class="detail-marca" id="detailMarca">Línea clásica · Catálogo Regular</p>
-            <h2 class="detail-nombre" id="detailNombre">COHIBA AMBAR</h2>
-            <table class="detail-specs" id="detailSpecs">
+          <div class="vd-info">
+            <p class="vd-marca" id="detailMarca">Línea clasica · Catálogo Regular</p>
+            <h2 class="vd-nombre" id="detailNombre">COHIBA AMBAR</h2>
+            <table class="vd-specs" id="detailSpecs">
               <tr><td>Vitola de galera:</td><td>Placeres</td></tr>
               <tr><td>Formato:</td><td>—</td></tr>
               <tr><td>Cepo:</td><td>34</td></tr>
@@ -246,298 +241,258 @@
               <tr><td>Calibre:</td><td>34</td></tr>
               <tr><td>Relleno:</td><td>Tripa larga</td></tr>
             </table>
-            <div class="detail-fortaleza">
-              <span class="spec-label">Fortaleza:</span>
-              <div class="fortaleza-bar">
-                <div class="fortaleza-fill" style="width:55%"></div>
-              </div>
-            </div>
-            <div class="detail-extra">
-              <table class="detail-specs">
-                <tr><td>Vendido en:</td><td>—</td></tr>
-                <tr><td>Cosecha:</td><td>—</td></tr>
-                <tr><td>Edición limitada:</td><td>—</td></tr>
-                <tr><td>Añejado:</td><td>—</td></tr>
-                <tr><td>Habanos Vintage 5, 10, 15:</td><td>—</td></tr>
+            <p class="spec-label">Fortaleza:</p>
+            <div class="fza-bar"><div class="fza-fill" style="width:55%"></div></div>
+            <div class="vd-extra-specs">
+              <table class="vd-specs">
+                <tr><td>Vendido en</td><td class="dots">.................</td></tr>
+                <tr><td>Cosecha</td><td class="dots">.................</td></tr>
+                <tr><td>Edicion limitada</td><td class="dots">.................</td></tr>
+                <tr><td>Añejado</td><td class="dots">.................</td></tr>
+                <tr><td>Habanos Vintage 5, 10, 15</td><td class="dots">.................</td></tr>
               </table>
             </div>
           </div>
-          <div class="detail-number-badge" id="detailBadge">34</div>
+          <div class="vd-cepo-badge" id="detailBadge">34</div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- VIEW: INDICE -->
+  <!-- ===== VIEW: ÍNDICE ===== -->
   <div class="view" id="view-indice">
-    <div class="hero-panel narrow indice-left">
-      <div class="hero-texture"></div>
-      <div class="hero-content">
-        <h2 class="indice-title">ÍNDICE<br><span>DE CAPÍTULOS</span></h2>
-        <div class="habanos-logo-footer">
-          <svg viewBox="0 0 100 20" fill="none"><text x="0" y="14" font-family="Lato" font-size="9" fill="#C9A84C" letter-spacing="3" font-weight="700">HABANOS</text></svg>
-        </div>
+    <div class="indice-photo-panel">
+      <div class="indice-photo-inner">
+        <h2 class="indice-title">Índice<br><span>de capítulos</span></h2>
+      </div>
+      <div class="indice-photo-logo">
+        <svg viewBox="0 0 100 22" width="90">
+          <text x="0" y="14" font-family="Lato,sans-serif" font-size="11" font-weight="700" fill="#C9A84C" letter-spacing="3">HABANOS</text>
+          <text x="0" y="22" font-family="Lato,sans-serif" font-size="7" fill="#C9A84C" letter-spacing="2">D.O.P.</text>
+        </svg>
       </div>
     </div>
-    <div class="form-panel indice-right">
-      <nav class="indice-nav">
-        <ul class="chapters-list" id="chaptersList">
-          <li class="chapter-item">
-            <button class="chapter-btn" onclick="toggleChapter(this)">
-              <span class="ch-num">1.</span>
-              <span class="ch-title">Introducción</span>
-              <span class="ch-arrow">▾</span>
-            </button>
-          </li>
-          <li class="chapter-item">
-            <button class="chapter-btn" onclick="toggleChapter(this)">
-              <span class="ch-num">2.</span>
-              <span class="ch-title">Composición y origen del tabaco</span>
-              <span class="ch-arrow">▾</span>
-            </button>
-            <ul class="sub-chapters hidden">
-              <li><button onclick="navigate('article', {ch:2, sub:1})">Anatomía de un Habano</button></li>
-              <li><button onclick="navigate('article', {ch:2, sub:2})">El Paraíso del Tabaco</button></li>
-              <li><button onclick="navigate('article', {ch:2, sub:3})">Partes del Habano</button></li>
-            </ul>
-          </li>
-          <li class="chapter-item">
-            <button class="chapter-btn" onclick="toggleChapter(this)">
-              <span class="ch-num">3.</span>
-              <span class="ch-title">Las marcas de Habanos S.A.</span>
-              <span class="ch-arrow">▾</span>
-            </button>
-          </li>
-          <li class="chapter-item">
-            <button class="chapter-btn" onclick="toggleChapter(this)">
-              <span class="ch-num">4.</span>
-              <span class="ch-title">El proceso de elaboración</span>
-              <span class="ch-arrow">▾</span>
-            </button>
-          </li>
-          <li class="chapter-item">
-            <button class="chapter-btn" onclick="toggleChapter(this)">
-              <span class="ch-num">5.</span>
-              <span class="ch-title">El arte del maridaje</span>
-              <span class="ch-arrow">▾</span>
-            </button>
-          </li>
-          <li class="chapter-item locked-ch">
-            <button class="chapter-btn" disabled>
-              <span class="ch-num">6.</span>
-              <span class="ch-title">Colecciones y ediciones especiales</span>
-              <span class="lock-icon">🔒</span>
-            </button>
-          </li>
-          <li class="chapter-item locked-ch">
-            <button class="chapter-btn" disabled>
-              <span class="ch-num">7.</span>
-              <span class="ch-title">El mundo del coleccionista</span>
-              <span class="lock-icon">🔒</span>
-            </button>
-          </li>
-        </ul>
-      </nav>
+    <div class="indice-list-panel">
+      <ul class="ch-list" id="chaptersList">
+        <li class="ch-item">
+          <button class="ch-row" onclick="toggleChapter(this)">
+            <span class="ch-lbl"><span class="ch-num">Capítulo 1.</span> <span class="ch-name">Introducción</span></span>
+            <span class="ch-arr">›</span>
+            <a class="ch-leer hidden" onclick="navigate('article',{ch:1,sub:0});event.stopPropagation()">Leer &gt;</a>
+          </button>
+        </li>
+        <li class="ch-item">
+          <button class="ch-row" onclick="toggleChapter(this)">
+            <span class="ch-lbl"><span class="ch-num">Capítulo 2.</span> <span class="ch-name">Composición y origen del Habano</span></span>
+            <span class="ch-arr">›</span>
+          </button>
+          <ul class="sub-ch hidden">
+            <li><button onclick="navigate('article',{ch:2,sub:1})">Anatomía de un Habano</button></li>
+            <li><button onclick="navigate('article',{ch:2,sub:2})">El paraíso del tábaco</button></li>
+          </ul>
+        </li>
+        <li class="ch-item">
+          <button class="ch-row" onclick="toggleChapter(this)">
+            <span class="ch-lbl"><span class="ch-num">Capítulo 3.</span> <span class="ch-name">El cultivo del tabaco</span></span>
+            <span class="ch-arr">›</span>
+          </button>
+        </li>
+        <li class="ch-item">
+          <button class="ch-row" onclick="toggleChapter(this)">
+            <span class="ch-lbl"><span class="ch-num">Capítulo 4.</span> <span class="ch-name">La elaboración del Habano</span></span>
+            <span class="ch-arr">›</span>
+          </button>
+        </li>
+        <li class="ch-item">
+          <button class="ch-row" onclick="toggleChapter(this)">
+            <span class="ch-lbl"><span class="ch-num">Capítulo 5.</span> <span class="ch-name">Vistiéndose bien</span></span>
+            <span class="ch-arr">›</span>
+          </button>
+        </li>
+        <li class="ch-item">
+          <button class="ch-row" onclick="toggleChapter(this)">
+            <span class="ch-lbl"><span class="ch-num">Capítulo 6.</span> <span class="ch-name">Las marcas y fortalezas del Habano</span></span>
+            <span class="ch-arr">›</span>
+          </button>
+        </li>
+        <li class="ch-item">
+          <button class="ch-row" onclick="toggleChapter(this)">
+            <span class="ch-lbl"><span class="ch-num">Capítulo 7.</span> <span class="ch-name">Vitolario y envases</span></span>
+            <span class="ch-arr">›</span>
+          </button>
+        </li>
+        <li class="ch-item">
+          <button class="ch-row" onclick="toggleChapter(this)">
+            <span class="ch-lbl"><span class="ch-num">Capítulo 8.</span> <span class="ch-name">Disfrutando un Habano</span></span>
+            <span class="ch-arr">›</span>
+          </button>
+        </li>
+        <li class="ch-item">
+          <button class="ch-row" onclick="toggleChapter(this)">
+            <span class="ch-lbl"><span class="ch-num">Capítulo 9.</span> <span class="ch-name">Mejorando con los años</span></span>
+            <span class="ch-arr">›</span>
+          </button>
+        </li>
+        <li class="ch-item">
+          <button class="ch-row" onclick="toggleChapter(this)">
+            <span class="ch-lbl"><span class="ch-num">Capítulo 10.</span> <span class="ch-name">El Habano en el mundo</span></span>
+            <span class="ch-arr">›</span>
+          </button>
+        </li>
+        <li class="ch-item">
+          <button class="ch-row" onclick="toggleChapter(this)">
+            <span class="ch-lbl"><span class="ch-num">Capítulo 11.</span> <span class="ch-name">Glosario de términos</span></span>
+            <span class="ch-arr">›</span>
+          </button>
+        </li>
+        <li class="ch-item">
+          <button class="ch-row muted-row">
+            <span class="ch-lbl"><span class="ch-name muted-txt">Guía de cepos</span></span>
+            <span class="ch-arr">›</span>
+          </button>
+        </li>
+      </ul>
     </div>
   </div>
 
-  <!-- VIEW: ARTICLE READER -->
+  <!-- ===== VIEW: ARTICLE ===== -->
   <div class="view white-view" id="view-article">
-    <div class="article-page">
-      <div class="breadcrumb" id="articleBreadcrumb">
-        <button onclick="navigate('indice')">Índice</button> <span>›</span>
-        <span id="breadcrumbCh">Capítulo 1. Introducción</span>
+    <div class="article-wrap">
+      <div class="art-breadcrumb" id="articleBreadcrumb">
+        <button onclick="navigate('indice')">Índice</button>
       </div>
-      <div class="article-layout" id="articleLayout">
-        <!-- populated dynamically -->
-      </div>
+      <div id="articleLayout"></div>
     </div>
   </div>
 
-  <!-- VIEW: NOVEDADES -->
+  <!-- ===== VIEW: NOVEDADES ===== -->
   <div class="view white-view" id="view-novedades">
-    <div class="novedades-page">
-      <h2 class="page-heading">Novedades</h2>
-      <div class="novedades-grid">
-        <div class="novedad-card dark-card" onclick="navigate('article',{ch:'nov',sub:1})">
-          <div class="nov-img nov-img-1"></div>
-          <div class="nov-body">
-            <span class="nov-cat">CATÁLOGO REGULAR — FLOR DE PLATA</span>
-            <h3>Juan Lopez Selección</h3>
-            <p class="nov-price">Leer →</p>
+    <div class="nov-wrap">
+      <p class="section-tag">Novedades</p>
+      <div class="nov-grid">
+        <div class="nov-card" onclick="navigate('article',{ch:'nov',sub:1})">
+          <div class="nov-photo np1"></div>
+          <div class="nov-info">
+            <span class="nov-cat-tag">Lazamiento (solo en Cuba)</span>
+            <h3 class="nov-title">JUAN LOPEZ SELECCIÓN</h3>
+            <button class="nov-leer">Leer &gt;</button>
           </div>
         </div>
-        <div class="novedad-card dark-card" onclick="navigate('article',{ch:'nov',sub:2})">
-          <div class="nov-img nov-img-2"></div>
-          <div class="nov-body">
-            <span class="nov-cat">EDICIÓN LIMITADA LANCERO</span>
-            <h3>Juan Lopez Selección</h3>
-            <p class="nov-price">Leer →</p>
+        <div class="nov-card" onclick="navigate('article',{ch:'nov',sub:2})">
+          <div class="nov-photo np2"></div>
+          <div class="nov-info">
+            <span class="nov-cat-tag">Vitolatio actualización</span>
+            <h3 class="nov-title">JUAN LOPEZ SELECCIÓN</h3>
+            <button class="nov-leer">Leer &gt;</button>
           </div>
         </div>
-        <div class="novedad-card dark-card" onclick="navigate('article',{ch:'nov',sub:3})">
-          <div class="nov-img nov-img-3"></div>
-          <div class="nov-body">
-            <span class="nov-cat">CATÁLOGO REGULAR — COHIBA</span>
-            <h3>Cohiba Vigorous</h3>
-            <p class="nov-price">Leer →</p>
-          </div>
-        </div>
-        <div class="novedad-card dark-card" onclick="">
-          <div class="nov-img nov-img-4"></div>
-          <div class="nov-body">
-            <span class="nov-cat">GRAN RESERVA — ROMEO Y JULIETA</span>
-            <h3>Romeo y Julieta Gran Reserva 2024</h3>
-            <p class="nov-price">Leer →</p>
-          </div>
-        </div>
-        <div class="novedad-card dark-card" onclick="">
-          <div class="nov-img nov-img-5"></div>
-          <div class="nov-body">
-            <span class="nov-cat">EDICIÓN LIMITADA — MONTECRISTO</span>
-            <h3>Montecristo Supremos</h3>
-            <p class="nov-price">Leer →</p>
-          </div>
-        </div>
-        <div class="novedad-card dark-card" onclick="">
-          <div class="nov-img nov-img-6"></div>
-          <div class="nov-body">
-            <span class="nov-cat">CATÁLOGO REGULAR — PARTAGÁS</span>
-            <h3>Partagás Serie P No. 2</h3>
-            <p class="nov-price">Leer →</p>
+        <div class="nov-card" onclick="navigate('article',{ch:'nov',sub:3})">
+          <div class="nov-photo np3"></div>
+          <div class="nov-info">
+            <span class="nov-cat-tag">Lanzamiento (Cannes)</span>
+            <h3 class="nov-title">COHIBA VISTOSOS</h3>
+            <button class="nov-leer">Leer &gt;</button>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- VIEW: PERFIL -->
+  <!-- ===== VIEW: PERFIL ===== -->
   <div class="view white-view" id="view-perfil">
-    <div class="perfil-page">
-      <div class="perfil-left">
-        <h3 class="section-label-dark">Mi Perfil</h3>
-        <div class="perfil-field">
-          <input type="text" class="field-input underline" placeholder="Nombre / Apellido *" value="Manuel Díaz Zárate" />
+    <div class="perfil-wrap">
+      <div class="perfil-col left-pcol">
+        <h3 class="perfil-slabel">Mi Perfil</h3>
+        <div class="fld"><input class="fld-in gold-ul" type="text" placeholder="Nombre / Apellido*" /></div>
+        <div class="fld-action-row">
+          <input class="fld-in gold-ul" type="email" placeholder="Correo Electrónico*" />
+          <button class="action-lnk">Editar +</button>
         </div>
-        <div class="perfil-field-row">
-          <input type="email" class="field-input underline" placeholder="Correo Electrónico *" value="habano1@gmail.com" />
-          <button class="field-action">Editar +</button>
+        <div class="fld-action-row">
+          <input class="fld-in gold-ul short" type="text" placeholder="País de Residencia*" />
+          <input class="fld-in gold-ul short" type="tel" placeholder="Teléfono" />
+          <button class="action-lnk">Editar +</button>
         </div>
-        <div class="perfil-field-row">
-          <input type="text" class="field-input underline" placeholder="País de Residencia *" value="España" />
-          <input type="tel" class="field-input underline" placeholder="Teléfono" value="+34 600 000 000" />
-          <button class="field-action">Editar +</button>
-        </div>
-        <button class="link-btn gold">Actualizar contraseña</button>
+        <button class="update-pwd-link">Actualizar contraseña</button>
 
-        <div class="perfil-section">
-          <h3 class="section-label-dark">Gestionar el acceso y los dispositivos</h3>
-          <div class="device-row">
-            <span class="device-info">Ordenador ip: 35277737325537 &nbsp; Correo asociado: mi perfil</span>
-            <button class="btn-sm-outline">Eliminar</button>
-          </div>
-          <div class="device-row">
-            <span class="device-info">Ordenador ip: 24343534374343 &nbsp; Correo asociado: habano1@gmail.com</span>
-            <button class="btn-sm-outline">Eliminar</button>
-          </div>
+        <h3 class="perfil-slabel" style="margin-top:2.5rem">Gestionar el acceso y los dispositivos</h3>
+        <div class="device-row">
+          <span class="device-txt">Ordenador ip: 352777373255375733 &nbsp; Correo asociado: mi perfil</span>
+          <button class="btn-elim">Eliminar</button>
+        </div>
+        <div class="device-row">
+          <span class="device-txt">Ordenador ip: 243435434374343434 &nbsp; Correo asociado: habano1@gmail.com</span>
+          <button class="btn-elim">Eliminar</button>
         </div>
       </div>
-      <div class="perfil-right">
-        <h3 class="section-label-dark">Configuración de perfiles</h3>
-        <div class="perfil-users">
-          <div class="perfil-user-row">
-            <div class="user-avatar-sm"><svg viewBox="0 0 30 30" fill="none"><circle cx="15" cy="12" r="6" fill="#C9A84C" opacity="0.4"/><path d="M4 28c0-6 4.9-10 11-10s11 4 11 10" fill="#C9A84C" opacity="0.2"/></svg></div>
-            <span class="user-email">habano1@gmail.com</span>
-            <button class="btn-sm-outline">Eliminar</button>
+      <div class="perfil-col right-pcol">
+        <h3 class="perfil-slabel">Configuración de perfiles</h3>
+        <div class="puser-row">
+          <div class="puser-av">
+            <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="15.5" fill="rgba(201,168,76,0.12)" stroke="rgba(201,168,76,0.4)" stroke-width="1"/><circle cx="16" cy="12" r="5" fill="#C9A84C" opacity="0.7"/><path d="M6 28c0-5.5 4.5-9 10-9s10 3.5 10 9" fill="#C9A84C" opacity="0.4"/></svg>
           </div>
-          <div class="perfil-user-row add">
-            <div class="user-avatar-sm add-icon"><svg viewBox="0 0 30 30" fill="none"><circle cx="15" cy="15" r="12" stroke="#999" stroke-width="1.5"/><line x1="15" y1="9" x2="15" y2="21" stroke="#999" stroke-width="1.5"/><line x1="9" y1="15" x2="21" y2="15" stroke="#999" stroke-width="1.5"/></svg></div>
-            <span class="user-email muted">Puedes añadir un correo</span>
-            <button class="btn-sm-outline">Añadir</button>
-          </div>
+          <span class="puser-email">habano1@gmail.com</span>
+          <button class="btn-elim">Eliminar</button>
         </div>
-        <button class="btn-outline-dark" onclick="doLogout()">Cerrar sesión</button>
+        <div class="puser-row">
+          <div class="puser-av">
+            <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="15.5" fill="rgba(201,168,76,0.08)" stroke="rgba(201,168,76,0.25)" stroke-width="1"/><line x1="16" y1="10" x2="16" y2="22" stroke="#C9A84C" stroke-width="1.5" opacity="0.5"/><line x1="10" y1="16" x2="22" y2="16" stroke="#C9A84C" stroke-width="1.5" opacity="0.5"/></svg>
+          </div>
+          <span class="puser-email muted-em">Puedes añadir un correo</span>
+          <button class="btn-elim">Añadir</button>
+        </div>
+        <button class="btn-logout" onclick="doLogout()">Cerrar sesión</button>
       </div>
     </div>
   </div>
 
-  <!-- VIEW: COLECCIONISTA -->
+  <!-- ===== VIEW: COLECCIONISTA ===== -->
   <div class="view white-view" id="view-coleccionista">
-    <div class="coleccionista-page">
+    <div class="col-wrap">
+      <!-- Anillas -->
       <div class="col-section">
-        <div class="col-section-header">
-          <h3>Mi Álbum<br><span class="col-label-sub">DE VITILLAS</span></h3>
-          <button class="btn-sm-outline">Añadir +</button>
+        <div class="col-sec-hdr">
+          <div><p class="col-mi">Mi Galería</p><h3 class="col-sec-title">DE ANILLAS</h3></div>
+          <button class="btn-add-col">Añadir +</button>
         </div>
-        <div class="vitillas-grid">
-          <div class="vitilla-card">
-            <div class="vitilla-img band-cohiba"></div>
-            <div class="vitilla-info">
-              <p class="vitilla-marca">Cohiba</p>
-              <p class="vitilla-nota">Añadir de: <span class="gold-txt">—</span></p>
-              <p class="vitilla-nota">Número 1 · Año 2023</p>
-            </div>
-          </div>
-          <div class="vitilla-card">
-            <div class="vitilla-img band-monte"></div>
-            <div class="vitilla-info">
-              <p class="vitilla-marca">Montecristo</p>
-              <p class="vitilla-nota">Añadir de: <span class="gold-txt">—</span></p>
-            </div>
-          </div>
-          <div class="vitilla-card">
-            <div class="vitilla-img band-romeo"></div>
-            <div class="vitilla-info">
-              <p class="vitilla-marca">Romeo y Julieta</p>
-              <p class="vitilla-nota">Añadir de: <span class="gold-txt">—</span></p>
-            </div>
-          </div>
-          <div class="vitilla-card add-card">
-            <div class="vitilla-img add-img"><span>+</span></div>
-          </div>
+        <p class="col-brand">Cohiba</p>
+        <div class="anillas-grid">
+          <div class="an-card"><div class="an-img cohiba-a"></div><p class="an-lbl">Anilla de ---------</p></div>
+          <div class="an-card"><div class="an-img cohiba-b"></div><p class="an-lbl">Anilla de ---------</p></div>
+        </div>
+        <p class="col-brand">Romeo y Julieta</p>
+        <div class="anillas-grid">
+          <div class="an-card"><div class="an-img romeo-a"></div><p class="an-lbl">Anilla de ---------</p></div>
+          <div class="an-card"><div class="an-img romeo-b"></div><p class="an-lbl">Anilla de ---------</p></div>
+        </div>
+        <p class="col-brand">Cuaba</p>
+        <div class="anillas-grid">
+          <div class="an-card"><div class="an-img cuaba-a"></div></div>
         </div>
       </div>
-      <div class="col-section">
-        <div class="col-section-header">
-          <h3>Mi Álbum<br><span class="col-label-sub">DE FUMADOR</span></h3>
-          <button class="btn-sm-outline">Añadir +</button>
+      <!-- Fumador -->
+      <div class="col-section col-mid-sec">
+        <div class="col-sec-hdr">
+          <div><p class="col-mi">Mi Galería</p><h3 class="col-sec-title">DE FUMADOR</h3></div>
+          <button class="btn-add-col">Añadir +</button>
         </div>
-        <div class="vitillas-grid">
-          <div class="vitilla-card">
-            <div class="vitilla-img fumador-1"></div>
-            <div class="vitilla-info"><p class="vitilla-marca">Cortador Cohiba</p></div>
-          </div>
-          <div class="vitilla-card">
-            <div class="vitilla-img fumador-2"></div>
-            <div class="vitilla-info"><p class="vitilla-marca">Encendedor</p></div>
-          </div>
-          <div class="vitilla-card add-card">
-            <div class="vitilla-img add-img"><span>+</span></div>
-          </div>
-        </div>
+        <div class="fum-card"><div class="fum-photo fp1"></div><p class="fum-lbl">Nombre de foto</p></div>
+        <div class="fum-card"><div class="fum-photo fp2"></div><p class="fum-lbl">Nombre de foto</p></div>
+        <div class="fum-card"><div class="fum-photo fp3"></div><p class="fum-lbl">Nombre de foto</p></div>
       </div>
+      <!-- Favoritas + Catas -->
       <div class="col-section">
-        <div class="col-section-header">
-          <h3>Mis Marcas<br><span class="col-label-sub">FAVORITAS</span></h3>
-          <button class="btn-sm-outline">Añadir +</button>
+        <div class="col-sec-hdr">
+          <div><p class="col-mi">Mis Marcas</p><h3 class="col-sec-title">FAVORITAS</h3></div>
         </div>
-        <div class="favoritas-list">
-          <div class="favorita-row">
-            <span class="fav-marca">Cohiba</span>
-            <div class="fav-stars">★★★★★</div>
-            <button class="link-btn small">Mis notas</button>
-          </div>
-          <div class="favorita-row">
-            <span class="fav-marca">Montecristo</span>
-            <div class="fav-stars">★★★★☆</div>
-            <button class="link-btn small">Mis notas</button>
-          </div>
+        <div class="fav-photo-card">
+          <div class="fav-photo-img fp-juan"></div>
+          <p class="fav-marca-name">Juan Lopez</p>
         </div>
-        <div class="col-section-header mt">
-          <h3>CATAS</h3>
-          <button class="btn-sm-outline">Añadir +</button>
+        <div class="col-sec-hdr" style="margin-top:2rem">
+          <div><p class="col-mi">Mis</p><h3 class="col-sec-title">CATAS</h3></div>
+          <button class="btn-add-col">Añadir +</button>
         </div>
-        <p class="col-empty">Aún no has registrado ninguna nota de cata.</p>
       </div>
     </div>
   </div>
