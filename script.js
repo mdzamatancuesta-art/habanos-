@@ -32,7 +32,8 @@ const ARTICLES = {
     title: 'El Mejor Tabaco del Mundo',
     body: `<p>En el mundo del tabaco existe una denominación de origen sin igual: el Habano. Producido exclusivamente en Cuba, este cigarro premium representa la cima de la artesanía tabacalera mundial, reconocido por los paladares más exigentes del planeta.</p>
       <p>Tres factores hacen al Habano irrepetible: el terruño cubano —especialmente la región de Vuelta Abajo en Pinar del Río—, el conocimiento ancestral de sus maestros torcedores y la hoja de tabaco negro cubano, la más aromática y compleja del mundo.</p>
-      <p>En 2026, el Habano sigue siendo el referente absoluto del tabaco premium. Las marcas que componen el portafolio de Habanos S.A. ofrecen más de 500 vitolas distintas, cada una con su personalidad única.</p>`,
+      <p>En 2026, el Habano sigue siendo el referente absoluto del tabaco premium. Las marcas que componen el portafolio de Habanos S.A. ofrecen más de 500 vitolas distintas, cada una con su personalidad única.</p>
+      <p>Este libro es una guía exhaustiva que cubre desde la historia del habano hasta las técnicas modernas de cultivo y elaboración. A través de estas páginas, descubrirás los secretos de las 27 marcas reconocidas con la Denominación de Origen Protegida Habanos.</p>`,
     pullQuote: 'El Habano: una referencia de perfección.',
   },
   '2-1': {
@@ -40,14 +41,37 @@ const ARTICLES = {
     title: 'Anatomía de un Habano',
     sub: 'PARTES DEL HABANO',
     anatomy: true,
-    body: `<p>Un habano se compone de tres partes fundamentales, cada una con un papel específico en la experiencia final del fumador. La armonía entre capa, capote y tripa determina el carácter único de cada vitola.</p>`,
+    body: `<p>Un habano se compone de tres partes fundamentales, cada una con un papel específico en la experiencia final del fumador. La armonía entre capa, capote y tripa determina el carácter único de cada vitola.</p>
+      <p>La capa, que es la hoja más exterior, proviene de las plantas cubanas de mayor calidad. El capote mantiene toda la estructura unida, mientras que la tripa es la mezcla de tabacos que define el sabor y la complejidad del habano.</p>`,
   },
   '2-2': {
     ch: 'Capítulo 2. Composición y origen del tabaco',
     title: 'El Paraíso del Tabaco',
     sub: 'CUBA Y SU TERROIR',
     body: `<p>Vuelta Abajo, en la provincia de Pinar del Río, es reconocida unánimemente como la mejor región tabacalera del mundo. Su suelo único crea condiciones imposibles de replicar en ningún otro lugar.</p>
-      <p>El microclima de la región, con sus temperaturas moderadas y la influencia de las brisas del Caribe, permite que las plantas de tabaco desarrollen aceites esenciales únicos.</p>`,
+      <p>El microclima de la región, con sus temperaturas moderadas y la influencia de las brisas del Caribe, permite que las plantas de tabaco desarrollen aceites esenciales únicos. La combinación de lluvia tropical, suelo rojo y vientos alisios crea un terroir incomparable.</p>
+      <p>Los vegueros cubanos han transmitido sus conocimientos durante generaciones, cultivando variedades de tabaco que no encuentran rival en ninguna otra parte del mundo.</p>`,
+  },
+  'nov-1': {
+    ch: 'Novedades',
+    title: 'JUAN LOPEZ SELECCIÓN',
+    sub: 'Lanzamiento (solo en Cuba)',
+    body: `<p>Juan López ha lanzado una nueva selección exclusiva disponible únicamente en Cuba. Esta edición especial combina las mejores hojas de la cosecha 2024 con técnicas tradicionales de torcido.</p>
+      <p>La vitola seleccionada destaca por su equilibrio de sabores y su aroma inconfundible, resultado de un cuidadoso proceso de añejamiento.</p>`,
+  },
+  'nov-2': {
+    ch: 'Novedades',
+    title: 'JUAN LOPEZ SELECCIÓN',
+    sub: 'Actualización del Vitolario',
+    body: `<p>Se ha actualizado el catálogo de vitolas de Juan López con nuevos formatos y especificaciones. El vitolario ahora incluye datos técnicos más precisos y clasificación mejorada.</p>
+      <p>Estas actualizaciones reflejan los cambios en la producción y disponibilidad de los formatos tradicionales.</p>`,
+  },
+  'nov-3': {
+    ch: 'Novedades',
+    title: 'COHIBA VISTOSOS',
+    sub: 'Lanzamiento (Cannes)',
+    body: `<p>Cohiba ha presentado su nueva línea Vistosos en el evento de Cannes, una edición limitada que celebra la excelencia del habano a nivel mundial.</p>
+      <p>Estos habanos están diseñados para los aficionados más exigentes, combinando carácter robusto con elegancia en su presentación.</p>`,
   },
 };
 
