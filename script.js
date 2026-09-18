@@ -31,9 +31,11 @@ const ARTICLES = {
     ch: 'Capítulo 1. Introducción',
     title: 'El Mejor Tabaco del Mundo',
     body: `<p>En el mundo del tabaco existe una denominación de origen sin igual: el Habano. Producido exclusivamente en Cuba, este cigarro premium representa la cima de la artesanía tabacalera mundial, reconocido por los paladares más exigentes del planeta.</p>
-      <p>Tres factores hacen al Habano irrepetible: el terruño cubano —especialmente la región de Vuelta Abajo en Pinar del Río—, el conocimiento ancestral de sus maestros torcedores y la hoja de tabaco negro cubano, la más aromática y compleja del mundo.</p>
-      <p>En 2026, el Habano sigue siendo el referente absoluto del tabaco premium. Las marcas que componen el portafolio de Habanos S.A. ofrecen más de 500 vitolas distintas, cada una con su personalidad única.</p>
-      <p>Este libro es una guía exhaustiva que cubre desde la historia del habano hasta las técnicas modernas de cultivo y elaboración. A través de estas páginas, descubrirás los secretos de las 27 marcas reconocidas con la Denominación de Origen Protegida Habanos.</p>`,
+      <p>Fue en Cuba, durante el primer viaje de Cristóbal Colón en 1492, donde se vio por primera vez el tabaco en el Nuevo Mundo. Los aborígenes del grupo taínos enrollaban y encendían unas hojas misteriosas llamadas "Cohiba". Desde ese puerto de partida, el tabaco ha sido comerciado y plantado por todo el mundo. Sin embargo, desde su existencia, el tabaco negro cubano fue considerado el mejor a nivel internacional.</p>
+      <p>Las condiciones únicas de la tierra de Cuba, suelos, clima, la variedad de tabaco negro cubano y el saber hacer de los vegueros y torcedores dedícados a su cultivo han contribuido a mantener su distinción más de cinco siglos después.</p>
+      <p>La esencia de esta diferencia está en el tabaco y su sabor, a partir de la unión de cuatro factores sólo existentes en Cuba: suelos, clima, la variedad de tabaco negro cubano y el saber hacer de los vegueros y torcedores. Es por ello que, aunque en otros lugares se puedan haber adquirido ciertas técnicas agrícolas cubanas e incluso las semillas autóctonas, jamás se podrá replicar la naturaleza única del suelo y el clima de Cuba.</p>
+      <p>El título "Habanos" es la Denominación de Origen Protegida (D.O.P) reservada para una selección de las más prominentes marcas cuyos tabacos se confeccionan, siguiendo las normas más rigurosas, a partir de hojas de tabaco cosechadas en zonas determinadas también protegidas como denominaciones de origen.</p>
+      <p>Los Habanos se elaboran "Totalmente a Mano", aplicando métodos cubanos que se utilizaron por primera vez en La Habana hace más de dos siglos, que se transmiten de generación en generación y que se han mantenido casi invariables.</p>`,
     pullQuote: 'El Habano: una referencia de perfección.',
   },
   '2-1': {
@@ -41,16 +43,20 @@ const ARTICLES = {
     title: 'Anatomía de un Habano',
     sub: 'PARTES DEL HABANO',
     anatomy: true,
-    body: `<p>Un habano se compone de tres partes fundamentales, cada una con un papel específico en la experiencia final del fumador. La armonía entre capa, capote y tripa determina el carácter único de cada vitola.</p>
-      <p>La capa, que es la hoja más exterior, proviene de las plantas cubanas de mayor calidad. El capote mantiene toda la estructura unida, mientras que la tripa es la mezcla de tabacos que define el sabor y la complejidad del habano.</p>`,
+    body: `<p>Se necesitan hasta seis tipos de hojas de tabaco para confeccionar un Habano, cada tipo especialmente cultivado y preparado con este fin: Volado, Seco, Ligero, Capote, Capa y Medio Tiempo.</p>
+      <p><strong>La Capa</strong> — Hoja exquisitamente fina y elástica. Forma la superficie exterior del Habano. La capa representa la culminación de la perfección de un Habano y contribuye significativamente a su sabor, aroma y combustibilidad.</p>
+      <p><strong>El Capote</strong> — La hoja especial que envuelve las hojas que forman la tripa, define la forma del Habano y da un toque final a su calidad a la hora de fumarlo.</p>
+      <p><strong>La Tripa</strong> — Está formada por 3 hojas como mínimo (Volado, Seco y Ligero). De su combinación resulta la ligada que distingue el sabor y fortaleza de un Habano. La Línea Belike, adicionalmente a estas hojas, incluye la rara hoja de Medio Tiempo, una hoja mágica.</p>`,
   },
   '2-2': {
     ch: 'Capítulo 2. Composición y origen del tabaco',
     title: 'El Paraíso del Tabaco',
     sub: 'CUBA Y SU TERROIR',
-    body: `<p>Vuelta Abajo, en la provincia de Pinar del Río, es reconocida unánimemente como la mejor región tabacalera del mundo. Su suelo único crea condiciones imposibles de replicar en ningún otro lugar.</p>
-      <p>El microclima de la región, con sus temperaturas moderadas y la influencia de las brisas del Caribe, permite que las plantas de tabaco desarrollen aceites esenciales únicos. La combinación de lluvia tropical, suelo rojo y vientos alisios crea un terroir incomparable.</p>
-      <p>Los vegueros cubanos han transmitido sus conocimientos durante generaciones, cultivando variedades de tabaco que no encuentran rival en ninguna otra parte del mundo.</p>`,
+    body: `<p>En ningún otro lugar del mundo se cultiva un tabaco mejor que el de Cuba. Pero incluso aquí, sólo algunas tierras, o vegas, se consideran aptas para cultivar el tabaco con que se confecciona un Habano.</p>
+      <p>Así como a un buen vino lo define su viñedo, el carácter de un Habano está íntimamente relacionado con el suelo donde se cultiva el tabaco. La "Selección" es el principio que rige cada una de las etapas en el proceso de producción de cada hoja de tabaco para el Habano. Es justo aquí donde esa selección comienza.</p>
+      <p>Los lugares donde se puede cultivar el tabaco para la confección de un Habano están estrictamente limitados a ciertas regiones, zonas y distritos tabacaleros bien definidos del territorio de Cuba. En estas regiones existe sólo un pequeño grupo de tierras que poseen su propio estilo especial de cultivo.</p>
+      <p>Estas son las Vegas de Primera, cuyas características las convierten en superiores a las demás gracias a la excepcional calidad de su suelo, su microclima, así como las sorprendentes habilidades desarrolladas a la hora de cultivarlas.</p>
+      <p>Son tan especiales estas regiones, zonas y distritos tabacaleros que están amparados por Denominaciones de Origen Protegidas (D.O.P.). Los encontrará marcados por un asterisco (*) en el texto. Tales zonas protegidas son: Semi Vuelta, Vuelta Abajo, Remedios, Vuelta Arriba y La Habana.</p>`,
   },
   'nov-1': {
     ch: 'Novedades',
