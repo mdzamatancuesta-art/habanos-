@@ -287,4 +287,5 @@ function setLang(lang) {
 document.addEventListener('DOMContentLoaded', () => {
   if (state.ageVerified) { navigate('home'); }
   else { navigate('agegate'); }
+  console.log('El Mundo del Habano - Versión 2026');
 });
